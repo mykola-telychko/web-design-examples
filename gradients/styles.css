@@ -1,0 +1,31 @@
+.gradient-container {
+    display: flex;
+    flex-direction: column; /* Змінено на column для вертикального розташування */
+    align-items: center; 
+  }
+  
+  .diagonal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; 
+  }
+  
+  .gradient {
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; /* Розподіл простору між елементами */
+  }
+  
+  .column {
+    flex: 1; /* Кожна колонка займає рівну частину доступного простору */
+    border: 1px solid black;
+    padding: 10px;
+  }
