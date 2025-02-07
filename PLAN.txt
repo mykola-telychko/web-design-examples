@@ -1,0 +1,1 @@
+- add chhidelogic for "gradients" btn for revers all gradients
