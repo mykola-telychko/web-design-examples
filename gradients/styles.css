@@ -18,7 +18,8 @@
     border-radius: 5px;
   }
   
-  .container {
+  /* .container { */
+  .content {
     display: flex;
     flex-direction: row; 
     justify-content: space-between; /* Розподіл простору між елементами */
@@ -29,3 +30,45 @@
     border: 1px solid black;
     padding: 10px;
   }
+
+/* ------- BTN LOGIC */
+/* Hide checkbox */
+.toggle-checkbox {
+  display: none;
+}
+
+/* Button style */
+.toggle-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Default: Show first block, hide second */
+.content-1 {
+  /* display: block; */
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+
+}
+.content-2 {
+  display: none;
+
+}
+
+/* When checked: Hide first block, show second */
+.toggle-checkbox:checked ~ .content-1 {
+  display: none;
+}
+.toggle-checkbox:checked ~ .content-2 {
+  /* display: block; */
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+}
