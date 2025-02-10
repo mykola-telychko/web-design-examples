@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>1 Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>1 Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 .w3-sidebar {
@@ -17,6 +17,24 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   bottom: 0;
   height: inherit;
 }
+
+.w3-co {
+    display: flex;
+    flex-direction: column;
+    /* height: 300px;  */
+}
+
+.w3-co > div {
+    margin-top: auto; /* Притискає останній елемент до нижнього краю */
+    align-self: flex-end; /* Вирівнює останній елемент по правому краю */
+}
+
+.read-more {
+    /* border: solid 1px red; */
+    width: 60px;
+    font-family: 'Roboto';
+    font-size: large;
+}
 </style>
 </head>
 <body>
@@ -25,9 +43,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="   " style="background: white; border-bottom: 1px solid black; ">
+  <div class="   " style="background: white; border-bottom: 2px solid black; ">
     <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-    <a href="#" class=" w3-button w3-theme-l1">LOGO</a>
+    <a href="#" class=" w3-button w3-theme-l1">SITENAME</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-black">ABOUT</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-black">VALUES</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-black">VALUE2</a>
@@ -57,40 +75,59 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
 <div class="w3-main" style="margin-left:250px">
-
+  
   <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal"> Laboris nisi ut</h1>
+    <div class="w3-twothird w3-container w3-co">
+      <h1 class=""> Laboris nisi ut</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
         dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        <!-- style="border: solid 1px red; width: 60px; font-family: 'Roboto'; font-size: large;" -->
+        <div class="read-more">
+           <a href="">more ></a>
+        </div>
     </div>
-    <div class="w3-third w3-container">
+    <div class="w3-quarter w3-container">
       <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD1</p>
       <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD2</p>
     </div>
   </div>
 
   <div class="w3-row">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Ut enim ad minim</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="w3-twothird w3-container w3-co">
+      <h1 class="">Ut enim ad minim</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+        ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+         et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+         laboris nisi ut aliquip ex ea commodo consequat.</p>
+         <div class="read-more">
+          <a href=""> more ></a>
+        </div>
     </div>
-    <div class="w3-third w3-container">
+    <div class="w3-quarter w3-container">
       <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD3</p>
       <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD4</p>
     </div>
   </div>
 
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Dolore magna</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <div class="w3-row w3-padding-64 ">
+    <div class="w3-twothird w3-container w3-co">
+      <h1 class="">Dolore magna</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+        laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing 
+        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="read-more">
+          <a href=""> more ></a>
+        </div>
     </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD5</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD6</p>
+
+    <div class="w3-quarter w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">rela5</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">rela6</p>
     </div>
   </div>
 
@@ -105,11 +142,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     </div>
   </div>
 
+  
   <footer id="myFooter" style="border-top: 1px solid black;">
-<!--     <div class="w3-container w3-theme-l5 w3-padding-16">
-      <h4>Footer</h4>
-    </div> -->
-
     <div class="w3-container w3-theme-l5 w3-center" >
       <h5>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></h5>
       <h5>Designed by <a href="https://github.com/mykola-telychko" target="_blank">Telychko Mykola</a></h5>
@@ -123,7 +157,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 <script>
 // Get the Sidebar
 var mySidebar = document.getElementById("mySidebar");
-
 // Get the DIV with overlay effect
 var overlayBg = document.getElementById("myOverlay");
 
@@ -137,12 +170,12 @@ function w3_open() {
     overlayBg.style.display = "block";
   }
 }
-
 // Close the sidebar with the close button
 function w3_close() {
   mySidebar.style.display = "none";
   overlayBg.style.display = "none";
 }
+
 </script>
 
 </body>
