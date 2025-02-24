@@ -5,6 +5,8 @@
 - add flex box examples and deploy on git-pages
 
 timeline: 
+https://www.w3schools.com/howto/howto_css_timeline.asp
+
 https://codepen.io/z5_code/pen/wBwxQda
 
 https://codepen.io/vincentscotto/pen/MWMpeQN
