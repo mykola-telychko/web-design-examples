@@ -1,3 +1,52 @@
+- fix timeline index2.html
+
 - add chhidelogic for "gradients" btn for revers all gradients
 
 - add flex box examples and deploy on git-pages
+
+timeline: 
+https://codepen.io/z5_code/pen/wBwxQda
+
+https://codepen.io/vincentscotto/pen/MWMpeQN
+
+https://codepen.io/kistasaurus/details/WNBWaVr
+
+https://codepen.io/menelaosly/pen/rNRbyrj 
+
+https://codepen.io/jkantner/details/NWoVGXx
+
+https://codepen.io/absolutholz/details/JjxroWL
+
+https://codepen.io/Fahad-Aameer/pen/poGEyQd
+
+https://codepen.io/nicoHDL/details/YzBPGKP
+
+https://codepen.io/GilaniRabbu/pen/dyQMXOm
+
+https://codepen.io/italobarrosmepen/pen/poOYopv
+
+https://codepen.io/Leokadiusz1/pen/rNZjEwa
+
+https://codepen.io/b_hazy/pen/rNrJOba
+
+https://codepen.io/annetawamono/pen/NWzYBKZ
+
+https://codepen.io/mohamedtharwat/pen/LYdBqdR
+
+https://codepen.io/mntcrl/details/PoRzmeG
+
+https://codepen.io/DindieWestWood/pen/BaYjxpO
+
+https://codepen.io/lomalaumi/pen/PoEvpXy
+
+https://codepen.io/MarkBoots/pen/OJOqNyB
+
+https://codepen.io/sitesoch/details/ZEKPmbZ
+
+https://codepen.io/depaso/details/GRmbVgE
+
+https://codepen.io/Olliebichard/details/ExWppbw
+
+https://codepen.io/giannoulakis/pen/XaEZmd
+
+https://codepen.io/dquagebeur/pen/JojdqX
