@@ -1,0 +1,287 @@
+<!-- https://codepen.io/telychko-mykola/pen/ZYEpoVV -->
+
+<style>
+    * {
+      margin: 0;
+      padding: 10px;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      box-sizing: border-box;
+    }
+  
+    body {
+      background: #2e364a;
+    }
+  
+    .timeline {
+      position: relative;
+      max-width: 100%;
+      margin: 100px auto;
+    }
+  
+    .containr {
+      padding: 10px 50px;
+      position: relative;
+      width: 50%;
+      animation: movedown 1s linear forwards;
+      opacity: 0;
+    }
+  
+    @keyframes movedown {
+      0% {
+        opacity: 1;
+        transform: translate(-30px);
+      }
+  
+      100% {
+        opacity: 1;
+        transform: translate(0px);
+      }
+    }
+  
+    .text-box {
+      padding: 20px 30px;
+      background: #fff;
+      position: relative;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+  
+    .left-container {
+      left: 0;
+    }
+  
+    .right-container {
+      left: 50%;
+    }
+  
+    .containr img {
+      position: absolute;
+      width: 40px;
+      border-radius: 50%;
+      right: -20px;
+      top: 35px;
+      z-index: 10;
+    }
+  
+    .right-container img {
+      left: -20px;
+    }
+  
+    .timeline::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 100%;
+      background: #fff;
+      top: 0px;
+      left: 50%;
+      margin-left: -3px;
+      z-index: -1;
+      animation: moveline 6s linear forwards;
+    }
+  
+    @keyframes moveline {
+      0% {
+        height: 0;
+      }
+  
+      100% {
+        height: 100%;
+      }
+    }
+  
+    .text-box h2 {
+      font-weight: 600;
+    }
+  
+    .text-box small {
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+  
+    .left-container-arrow {
+      height: 0;
+      width: 0;
+      position: absolute;
+      top: 28px;
+      z-index: 1;
+      border-top: 15px soild transparent;
+      border-bottom: 15px soild transparent;
+      border-left: 15px soild #fff;
+      right: -15px;
+    }
+  
+    .containr:nth-child(1) {
+      animation-delay: 0s;
+    }
+  
+    .containr:nth-child(2) {
+      animation-delay: 1s;
+    }
+  
+    .containr:nth-child(3) {
+      animation-delay: 2s;
+    }
+  
+    .containr:nth-child(4) {
+      animation-delay: 2s;
+    }
+  
+    .containr:nth-child(4) {
+      animation-delay: 3s;
+    }
+  
+    .containr:nth-child(5) {
+      animation-delay: 4s;
+    }
+  
+    .containr:nth-child(6) {
+      animation-delay: 5s;
+    }
+  
+    .containr:nth-child(7) {
+      animation-delay: 6s;
+    }
+  
+    .containr:nth-child(8) {
+      animation-delay: 7s;
+    }
+  
+    @media screen and (max-width: 600px) {
+      .timeline {
+        margin: 50px auto;
+      }
+  
+      .timeline::after {
+        left: 31px;
+      }
+  
+      .containr {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 25px;
+      }
+  
+      .text-box {
+        font-size: 13px;
+      }
+  
+      .text-box small {
+        font-size: 10px;
+      }
+  
+      .right-container {
+        left: 0;
+      }
+  
+      .left-container img {
+        left: 0px;
+      }
+  
+      .right-container img {
+        left: 3px;
+      }
+  
+      .rotated-square {
+        left: 0px;
+        width: 35px;
+        height: 35px;
+        background-color: cyan;
+        transform: rotate(45deg);
+      }
+    }
+  
+    /* .rotated-square {
+    width: 35px;
+    height: 35px;
+    background-color: cyan;
+    transform: rotate(45deg);
+  } */
+  </style>
+  
+  <div class="timeline">
+  
+    <div class="containr left-container">
+      <div class="rotated-square"></div>
+      <div class="text-box">
+        <h2> Antiquity </h2>
+        <small>(8th century BC - 5th century AD)</small>
+        <p>The period of flourishing of ancient Greek and Roman cultures, characterized by the development of philosophy, science, art, and literature.</p>
+        <span class="left-container-arrow"></span>
+      </div>
+  
+    </div>
+  
+    <div class="containr right-container">
+      <div class="rotated-square"></div>
+      <div class="text-box">
+        <h2> Middle Ages </h2>
+        <small>(5th - 15th centuries)</small>
+        <p>The period of dominance of the Christian church, development of feudal relations, scholastic philosophy, and Gothic art.</p>
+        <span class="right-container-arrow"></span>
+      </div>
+    </div>
+  
+    <div class="containr left-container">
+      <img src="download.png">
+      <div class="text-box">
+        <h2> Renaissance </h2>
+        <small>(14th - 16th centuries)</small>
+        <p>A period of renewed interest in ancient culture, the development of humanism, Renaissance art, and scientific discoveries.</p>
+        <span class="left-container-arrow"></span>
+      </div>
+    </div>
+    <div class="containr right-container">
+      <img src="download.png">
+      <div class="text-box">
+        <h2> Early Modern Period </h2>
+        <small>(17th - 19th centuries)</small>
+        <p>A period of development of capitalist relations, the scientific revolution, the Enlightenment, classicism and romanticism in art.</p>
+        <span class="right-container-arrow"></span>
+      </div>
+    </div>
+    <div class="containr left-container">
+      <img src="download.png">
+      <div class="text-box">
+        <h2> Modern Era </h2>
+        <small>(20th - 21st centuries)</small>
+        <p>A period of scientific and technological progress, globalization, development of mass culture, postmodernism.</p>
+        <span class="left-container-arrow"></span>
+      </div>
+    </div>
+    <div class="containr right-container">
+      <img src="download.png">
+      <div class="text-box">
+        <h2> Shadowfox</h2>
+        <small>[2-31]-Jan-2025</small>
+        <p>hello my self mritunjau tiwari</p>
+        <span class="right-container-arrow"></span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 1.
+  Key achievements:
+  Philosophy: Works of Plato, Aristotle, Socrates.
+  Science: Discoveries of Archimedes, Euclid, Ptolemy.
+  Art: Sculpture (Myron, Phidias), architecture (Parthenon), literature (Homer, Virgil).
+  2.
+  Key achievements:
+  Philosophy: Works of Augustine of Hippo, Thomas Aquinas.
+  Art: Romanesque and Gothic architecture (Notre Dame de Paris), icon painting.
+  Literature: Epic poetry ("The Song of Roland"), chivalric romances.
+  3.
+  Key achievements:
+  Philosophy: Ideas of humanists (Francesco Petrarch, Erasmus of Rotterdam).
+  Art: Painting (Leonardo da Vinci, Michelangelo, Raphael), sculpture (Donatello).
+  Science: Discoveries of Nicolaus Copernicus, Galileo Galilei.
+  4.
+  Key achievements:
+  Philosophy: Ideas of Descartes, Locke, Kant, Hegel.
+  Science: Discoveries of Newton, Darwin.
+  Art: Classicism (Racine, Molière), romanticism (Hugo, Delacroix).
+  5.
+  Key achievements:
+  Science: Discoveries of Einstein, quantum mechanics, genetic engineering.
+  Art: Modernism (Picasso, Dali), postmodernism (Warhol).
+  Technology: Computers, the Internet, mobile devices. -->
