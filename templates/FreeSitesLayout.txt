@@ -4,6 +4,11 @@ LAST 26::::
 https://www.free-css.com/free-css-templates?start=828
 https://templatemo.com/page/15
 
+90s style 
+https://templated.live/longbeach/
+https://templated.live/corporateblue/
+
+macos / for math https://templated.live/maxos/
 
 pharmacy and hospital 
 https://www.free-css.com/free-css-templates/page296/klinik
@@ -11,6 +16,8 @@ https://www.free-css.com/free-css-templates/page296/mediplus-lite
 https://www.free-css.com/free-css-templates/page279/medion
 https://templatemo.com/tm-566-medic-care
 
+devops 
+https://templated.live/simplework/  \\ nice minimalistic 
 
 education 
 https://www.free-css.com/free-css-templates/page279/ecourses
@@ -29,5 +36,4 @@ ads
 https://www.free-css.com/free-css-templates/page277/cads
 
 tabs: 
-
 https://html5up.net/dimension

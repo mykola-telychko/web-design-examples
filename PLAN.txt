@@ -9,11 +9,14 @@
     HTML5 UP – Сучасні та адаптивні шаблони з відкритим кодом.
     Templatemo – Готові HTML5 та Bootstrap шаблони.
     BootstrapMade – Безкоштовні шаблони на основі Bootstrap.
-    Colorlib – Багато безкоштовних та адаптивних тем.
-    Nicepage – Різні HTML/CSS шаблони для будь-яких проєктів.
+    Colorlib (not free) 
+    Nicepage (require install web-constructor)
     Start Bootstrap – Чисті Bootstrap-шаблони для сайтів.
     TEMPLATED – Мінімалістичні шаблони для сайтів.
     ThemeWagon – Безкоштовні й преміум HTML-шаблони.
+
+// design history 
+https://nicepage.com/doc/20348/web-design-30
 
 timeline: 
 https://www.w3schools.com/howto/howto_css_timeline.asp
@@ -63,3 +66,7 @@ https://codepen.io/Olliebichard/details/ExWppbw
 https://codepen.io/giannoulakis/pen/XaEZmd
 
 https://codepen.io/dquagebeur/pen/JojdqX
+
+trash ref: 
+
+https://gridgum.com/themes/news-free-psd/
