@@ -7,8 +7,11 @@ https://templatemo.com/page/15
 90s style 
 https://templated.live/longbeach/
 https://templated.live/corporateblue/
-
 macos / for math https://templated.live/maxos/
+
+
+nice blocks cards: 
+https://templated.live/saleable/
 
 pharmacy and hospital 
 https://www.free-css.com/free-css-templates/page296/klinik
@@ -37,3 +40,10 @@ https://www.free-css.com/free-css-templates/page277/cads
 
 tabs: 
 https://html5up.net/dimension
+
+dashboards: 
+https://www.tailwindtoolbox.com/templates/admin-template-demo.php#
+https://themewagon.github.io/admin-one/index.html
+https://frlive.prium.me/app/kanban
+
+nice cards https://demos.creative-tim.com/material-tailwind-dashboard-react/#/dashboard/home
