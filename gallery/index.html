@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Color Blocks</title>
+  <style>
+    .block {
+      height: 100px;
+      margin-bottom: 10px;
+      text-align: center;
+      line-height: 100px;
+      font-weight: bold;
+      color: white;
+      font-size: 20px;
+    }
+    .responsive {
+      padding: 6px;
+      float: left;
+      width: 24.99999%;
+    }
+    
+    @media only screen and (max-width: 700px) {
+      .responsive {
+        width: 49.99999%;
+        margin: 10px 0;
+      }
+    }
+    
+    @media only screen and (max-width: 500px) {
+      .responsive {
+        width: 100%;
+      }
+    }
+    
+    .clearfix:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Responsive Color Blocks</h2>
+<h4>Resize the browser window to see the effect.</h4>
+
+<!-- Blocks Container -->
+<div class="gallery-container">
+  <div class="responsive"><div class="block" style="background-color: red;">Red</div></div>
+  <div class="responsive"><div class="block" style="background-color: blue;">Blue</div></div>
+  <div class="responsive"><div class="block" style="background-color: green;">Green</div></div>
+  <div class="responsive"><div class="block" style="background-color: orange;">Orange</div></div>
+  <div class="responsive"><div class="block" style="background-color: purple;">Purple</div></div>
+  <div class="responsive"><div class="block" style="background-color: pink;">Pink</div></div>
+  <div class="responsive"><div class="block" style="background-color: brown;">Brown</div></div>
+  <div class="responsive"><div class="block" style="background-color: yellow;">Yellow</div></div>
+    <div class="responsive"><div class="block" style="background-color: red;">Red</div></div>
+  <div class="responsive"><div class="block" style="background-color: blue;">Blue</div></div>
+  <div class="responsive"><div class="block" style="background-color: green;">Green</div></div>
+  <div class="responsive"><div class="block" style="background-color: orange;">Orange</div></div>
+  <div class="responsive"><div class="block" style="background-color: purple;">Purple</div></div>
+  <div class="responsive"><div class="block" style="background-color: pink;">Pink</div></div>
+  <div class="responsive"><div class="block" style="background-color: brown;">Brown</div></div>
+  <div class="responsive"><div class="block" style="background-color: yellow;">Yellow</div></div>
+</div>
+
+<div class="clearfix"></div>
+
+<div style="padding:6px;">
+  <p>This example uses media queries to re-arrange the blocks on different screen sizes: for screens larger than 700px wide, it will show four blocks side by side; for screens smaller than 700px, it will show two blocks side by side. For screens smaller than 500px, the blocks will stack vertically (100%).</p>
+</div>
+
+</body>
+</html>
