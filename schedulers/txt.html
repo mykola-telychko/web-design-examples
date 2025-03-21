@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Shadow Examples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .text-example {
+      font-size: 48px;
+      font-weight: bold;
+      color: #fff;
+      margin: 20px 0;
+      padding: 20px;
+      background: #333;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    /* Basic Text Shadow */
+    .basic-shadow {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Glow Effect */
+    .glow-shadow {
+      text-shadow: 0 0 10px #ff7e5f, 0 0 20px #feb47b;
+    }
+
+    /* 3D Effect */
+    .three-d-shadow {
+      text-shadow: 1px 1px 0 #ff7e5f, 2px 2px 0 #feb47b, 3px 3px 0 #8e2de2;
+    }
+
+    /* Outline Effect */
+    .outline-shadow {
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    /* Neon Effect */
+    .neon-shadow {
+      text-shadow: 0 0 5px #ff7e5f, 0 0 10px #ff7e5f, 0 0 20px #ff7e5f, 0 0 40px #feb47b;
+    }
+    .neon-shadow1 {
+        text-shadow: 0 0 5px #1b35c8, 0 0 10px #d0d2f7, 0 0 20px #1f5eff, 0 0 40px #244ff1;
+    }
+
+    /* Multiple Shadows */
+    .multiple-shadow {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5);
+    }
+
+    /* Soft Shadow */
+    .soft-shadow {
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Hard Shadow */
+    .hard-shadow {
+      text-shadow: 4px 4px 0 #000;
+    }
+
+    /* Layered Shadow */
+    .layered-shadow {
+      text-shadow: 1px 1px 0 #ff7e5f, 2px 2px 0 #feb47b, 3px 3px 0 #8e2de2, 4px 4px 0 #4a00e0;
+    }
+
+    /* Gradient Shadow */
+    .gradient-shadow {
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <h1>Text Shadow Examples</h1>
+
+  <!-- Basic Shadow -->
+  <div class="text-example basic-shadow">BLACKLIST</div>
+
+  <!-- Glow Effect -->
+  <div class="text-example glow-shadow">BLACKLIST</div>
+
+  <!-- 3D Effect -->
+  <div class="text-example three-d-shadow">BLACKLIST</div>
+
+  <!-- Outline Effect -->
+  <div class="text-example outline-shadow">BLACKLIST</div>
+
+  <!-- Neon Effect -->
+  <div class="text-example neon-shadow">red neon </div>
+  <div class="text-example neon-shadow1">blue neon </div>
+
+  <!-- Multiple Shadows -->
+  <div class="text-example multiple-shadow">BLACKLIST</div>
+
+  <!-- Soft Shadow -->
+  <div class="text-example soft-shadow">BLACKLIST 2</div>
+
+  <!-- Hard Shadow -->
+  <div class="text-example hard-shadow">BLACKLIST</div>
+
+  <!-- Layered Shadow -->
+  <div class="text-example layered-shadow">BLACKLIST</div>
+
+  <!-- Gradient Shadow -->
+  <div class="text-example gradient-shadow">BLACKLIST</div>
+</body>
+</html>

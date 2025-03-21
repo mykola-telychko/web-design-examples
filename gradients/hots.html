@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>heroes of the storm</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .gradient {
+      width: 100%;
+      height: 150px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+    /* Radial Gradient */
+    .radial {
+      background: radial-gradient(circle, #a97eff,  #ad9abf);
+    }
+    .radial1 {
+      background: radial-gradient(circle, #3c3054,  #655a6f);
+    }
+    .radial2 {
+      background: radial-gradient(circle,  #ad9abf, #a97eff);
+    }
+    .radial3 {
+      background: radial-gradient(circle,  #d2bfe3, #6c28f5);
+    }
+    .radial4 {
+      background: radial-gradient(circle,  #b977f3, #6c28f5);
+    }
+
+    /* Gradient with Transparency */
+    .transparency {
+      background: linear-gradient(to right, rgba(255, 126, 95, 0.8), rgba(254, 180, 123, 0.8));
+    }
+    /* Gradient with Image Overlay */
+    .image-overlay {
+      background: linear-gradient(to right, rgba(255, 126, 95, 0.8), rgba(254, 180, 123, 0.8)),
+                  url('https://via.placeholder.com/800x400');
+      background-blend-mode: overlay;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <h1>Background Gradients</h1>
+  <!-- Radial Gradient -->
+  <div class="gradient radial">Radial Gradient</div>
+
+  <div class="gradient radial4">Radial 4</div>
+
+  <div class="gradient radial1">Radial 1</div>
+  <div class="gradient radial2">Radial 2</div>
+  <div class="gradient radial3">Radial 3</div>
+
+
+
+</body>
+</html>

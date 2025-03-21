@@ -1,3 +1,5 @@
+- check /gradients/list.txt
+
 - fix timeline index2.html
 
 - add chhidelogic for "gradients" btn for revers all gradients
