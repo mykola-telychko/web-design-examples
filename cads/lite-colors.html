@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Напівпрозорі картки</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      width: 300px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.5); /* Напівпрозорий білий фон */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px); /* Розмиття фону */
+      text-align: center;
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 16px;
+      color: #555;
+    }
+
+    /* Різні кольори карток */
+    .card.red {
+      background-color: rgba(255, 99, 71, 0.5); /* Напівпрозорий червоний */
+    }
+
+    .card.blue {
+      background-color: rgba(30, 144, 255, 0.5); /* Напівпрозорий синій */
+    }
+
+    .card.green {
+      background-color: rgba(50, 205, 50, 0.5); /* Напівпрозорий зелений */
+    }
+
+    .card.purple {
+      background-color: rgba(147, 112, 219, 0.5); /* Напівпрозорий фіолетовий */
+    }
+
+    .card.yellow {
+      background-color: rgba(255, 215, 0, 0.5); /* Напівпрозорий жовтий */
+    }
+  </style>
+</head>
+<body>
+  <!-- Біла картка -->
+  <div class="card">
+    <h2>Біла картка</h2>
+    <p>Напівпрозорий білий фон.</p>
+  </div>
+
+  <!-- Червона картка -->
+  <div class="card red">
+    <h2>Червона картка</h2>
+    <p>Напівпрозорий червоний фон.</p>
+  </div>
+
+  <!-- Синь картка -->
+  <div class="card blue">
+    <h2>Синя картка</h2>
+    <p>Напівпрозорий синій фон.</p>
+  </div>
+
+  <!-- Зелена картка -->
+  <div class="card green">
+    <h2>Зелена картка</h2>
+    <p>Напівпрозорий зелений фон.</p>
+  </div>
+
+  <!-- Фіолетова картка -->
+  <div class="card purple">
+    <h2>Фіолетова картка</h2>
+    <p>Напівпрозорий фіолетовий фон.</p>
+  </div>
+
+  <!-- Жовта картка -->
+  <div class="card yellow">
+    <h2>Жовта картка</h2>
+    <p>Напівпрозорий жовтий фон.</p>
+  </div>
+</body>
+</html>
