@@ -1,0 +1,33 @@
+I'll modify the script to use CSS classes for toggling the views. Here's the updated script:
+javascriptCopydocument.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.getElementById('translationToggle');
+    const singleView = document.getElementById('singleViewContent');
+    const splitView = document.getElementById('splitViewContent');
+
+    toggle.addEventListener('change', function() {
+        if (this.checked) {
+            singleView.classList.add('hidden');
+            splitView.classList.add('active');
+        } else {
+            singleView.classList.remove('hidden');
+            splitView.classList.remove('active');
+        }
+    });
+});
+This script maintains the existing CSS-based approach, using classList.add() and classList.remove() to toggle the view. The CSS classes hidden and active are already defined in the stylesheet, so this approach relies entirely on CSS for the visual switching logic.
+The key CSS classes that enable this are:
+cssCopy.split-view {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.split-view.active {
+    display: grid;
+}
+.single-view:not(.hidden) {
+    display: block;
+}
+.hidden {
+    display: none;
+}
+These CSS rules handle the showing and hiding of the single and split views based on the applied classes.

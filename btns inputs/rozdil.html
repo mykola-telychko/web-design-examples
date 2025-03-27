@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESB</title> 
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        section { margin-bottom: 40px;}
+        section h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        section p { font-size: 1.1em; }
+        section ul {
+            list-style: square;
+            padding-left: 20px;
+        }
+        section ul li {
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table th {
+            background-color: #333;
+            color: #fff;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+        footer p {  margin: 0;}
+
+        /* New styles for translation feature */
+        .translation-control {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 10px;
+            align-items: center;
+        }
+        .split-view {
+            display: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .split-view.active {
+            display: grid;
+        }
+        .single-view:not(.hidden) {
+            display: block;
+        }
+        .hidden {
+            display: none;
+        }
+        .translation-column {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .switch-label {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+        .switch-label input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 30px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <header>
+            <h1>English Study</h1> 
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="translation-control">
+                <span>Single view</span>
+                <label class="switch-label">
+                    <input type="checkbox" id="translationToggle">
+                    <span class="slider"></span>
+                </label>
+                <span>Split view</span>
+            </div>
+
+            <div class="single-view" id="singleViewContent">
+                <section>
+                    <h2>About Me</h2>
+                    <p>Hi there! My name is Mykola. I've been learning English for 3 years and I've always enjoyed sharing my knowledge and experiences with others. 
+                    Whether you're a beginner or an advanced learner, I hope you'll find something useful here.</p>
+                </section>
+                <section>
+                    <h2>Let's Connect!</h2>
+                    <ul>
+                        <li><a href="https://x.com">twitter(X)</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="split-view" id="splitViewContent">
+                <div class="translation-column">
+                    <section>
+                        <h2>About Me</h2>
+                        <p>Hi there! My name is Mykola. I've been learning English for 3 years and I've always enjoyed sharing my knowledge and experiences with others. 
+                        Whether you're a beginner or an advanced learner, I hope you'll find something useful here.</p>
+                    </section>
+                    <section>
+                        <h2>Let's Connect!</h2>
+                        <ul>
+                            <li><a href="https://x.com">twitter(X)</a></li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="translation-column">
+                    <section>
+                        <h2>Про мене</h2>
+                        <p>Привіт! Мене звати Микола. Я вивчаю англійську вже 3 роки і завжди любив ділитися своїми знаннями та досвідом з іншими.
+                        Незалежно від того, чи ви початківець, чи досвідчений учень, сподіваюся, ви знайдете тут щось корисне для себе.</p>
+                    </section>
+                    <section>
+                        <h2>Зв'язок</h2>
+                        <ul>
+                            <li><a href="https://x.com">twitter(X)</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2025 Telychko Mykola. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggle = document.getElementById('translationToggle');
+            const singleView = document.getElementById('singleViewContent');
+            const splitView = document.getElementById('splitViewContent');
+
+            toggle.addEventListener('change', function() {
+                if (this.checked) {
+                    singleView.classList.add('hidden');
+                    splitView.classList.add('active');
+                } else {
+                    singleView.classList.remove('hidden');
+                    splitView.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
