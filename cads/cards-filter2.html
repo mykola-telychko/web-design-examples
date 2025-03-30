@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Картки з термінами</title>
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #6b8cae;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .filter-container {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .filter-btn {
+            padding: 8px 15px;
+            background-color: #e9ecef;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .filter-btn:hover {
+            background-color: #dee2e6;
+        }
+        
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .reset-btn {
+            padding: 8px 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: auto;
+            font-size: 14px;
+        }
+        
+        .reset-btn:hover {
+            background-color: #e9ecef;
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .card-category {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-buttons {
+                justify-content: center;
+            }
+            
+            .reset-btn {
+                margin-left: 0;
+                margin-top: 10px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Термінологічний довідник</h1>
+        <p>Фільтруйте картки за категоріями або знаходьте за пошуком</p>
+    </header>
+    
+    <div class="filter-container">
+        <input type="text" class="search-box" id="search-box" placeholder="Пошук за назвою або описом...">
+        
+        <div class="filter-buttons">
+            <button class="filter-btn" data-category="technology">Технології</button>
+            <button class="filter-btn" data-category="security">Безпека</button>
+            <button class="filter-btn" data-category="medical">Медицина</button>
+            <button class="filter-btn" data-category="legal">Юридичні</button>
+            <button class="filter-btn" data-category="finance">Фінанси</button>
+            <button class="reset-btn" id="reset-btn">Скинути фільтри</button>
+        </div>
+    </div>
+    
+    <div class="cards-container" id="cards-container">
+        <!-- Картки будуть додані через JavaScript -->
+    </div>
+    
+    <script>
+        // Дані карток
+        const cardsData = [
+            {
+                title: "HTML",
+                description: "Мова розмітки гіпертексту, основа веб-сторінок.",
+                category: "technology"
+            },
+            {
+                title: "CSS",
+                description: "Мова стилів для опису зовнішнього вигляду документів.",
+                category: "technology"
+            },
+            {
+                title: "JavaScript",
+                description: "Мова програмування для створення інтерактивних веб-сторінок.",
+                category: "technology"
+            },
+            {
+                title: "GDPR",
+                description: "Загальний регламент щодо захисту даних в ЄС.",
+                category: "legal"
+            },
+            {
+                title: "Firewall",
+                description: "Система безпеки, що контролює мережевий трафік.",
+                category: "security"
+            },
+            {
+                title: "VPN",
+                description: "Віртуальна приватна мережа для безпечного з'єднання.",
+                category: "security"
+            },
+            {
+                title: "CPI",
+                description: "Індекс споживчих цін, показник інфляції.",
+                category: "finance"
+            },
+            {
+                title: "ECG",
+                description: "Електрокардіограма, метод діагностики серця.",
+                category: "medical"
+            },
+            {
+                title: "API",
+                description: "Інтерфейс програмування додатків для взаємодії програм.",
+                category: "technology"
+            },
+            {
+                title: "Phishing",
+                description: "Шахрайський метод отримання конфіденційної інформації.",
+                category: "security"
+            }
+        ];
+        
+        // Отримуємо елементи DOM
+        const cardsContainer = document.getElementById('cards-container');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const resetBtn = document.getElementById('reset-btn');
+        const searchBox = document.getElementById('search-box');
+        
+        // Поточний стан фільтрів
+        let activeFilters = [];
+        let searchQuery = '';
+        
+        // Функція для відображення карток
+        function displayCards(cards) {
+            cardsContainer.innerHTML = '';
+            
+            const filteredCards = cards.filter(card => {
+                // Фільтрація за категоріями
+                const categoryMatch = activeFilters.length === 0 || 
+                                     activeFilters.includes(card.category);
+                
+                // Фільтрація за пошуковим запитом
+                const searchMatch = searchQuery === '' || 
+                                   card.title.toLowerCase().includes(searchQuery) || 
+                                   card.description.toLowerCase().includes(searchQuery);
+                
+                return categoryMatch && searchMatch;
+            });
+            
+            if (filteredCards.length === 0) {
+                cardsContainer.innerHTML = '<div class="no-results">Нічого не знайдено за обраними критеріями</div>';
+                return;
+            }
+            
+            filteredCards.forEach(card => {
+                const cardElement = document.createElement('div');
+                cardElement.className = 'card';
+                cardElement.dataset.category = card.category;
+                
+                cardElement.innerHTML = `
+                    <div class="card-header">${card.title}</div>
+                    <div class="card-body">
+                        <span class="card-category">${getCategoryName(card.category)}</span>
+                        <p>${card.description}</p>
+                    </div>
+                `;
+                
+                cardsContainer.appendChild(cardElement);
+            });
+        }
+        
+        // Функція для отримання назви категорії
+        function getCategoryName(categoryValue) {
+            const button = Array.from(filterButtons).find(btn => btn.dataset.category === categoryValue);
+            return button ? button.textContent : categoryValue;
+        }
+        
+        // Функція для оновлення активних фільтрів
+        function updateActiveFilters(category) {
+            const index = activeFilters.indexOf(category);
+            
+            if (index === -1) {
+                activeFilters.push(category);
+            } else {
+                activeFilters.splice(index, 1);
+            }
+            
+            // Оновлюємо стан кнопок
+            filterButtons.forEach(btn => {
+                if (activeFilters.includes(btn.dataset.category)) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            displayCards(cardsData);
+        }
+        
+        // Функція для скидання фільтрів
+        function resetFilters() {
+            activeFilters = [];
+            searchQuery = '';
+            searchBox.value = '';
+            
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            displayCards(cardsData);
+        }
+        
+        // Функція для обробки пошуку
+        function handleSearch() {
+            searchQuery = searchBox.value.toLowerCase().trim();
+            displayCards(cardsData);
+        }
+        
+        // Ініціалізація сторінки
+        function init() {
+            displayCards(cardsData);
+            
+            // Додаємо обробники подій для кнопок фільтрів
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    updateActiveFilters(btn.dataset.category);
+                });
+            });
+            
+            // Додаємо обробник для кнопки скидання
+            resetBtn.addEventListener('click', resetFilters);
+            
+            // Додаємо обробник для поля пошуку
+            searchBox.addEventListener('input', handleSearch);
+        }
+        
+        // Запускаємо ініціалізацію при завантаженні сторінки
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
