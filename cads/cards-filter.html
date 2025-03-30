@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Картки з термінами</title>
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #6b8cae;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .filter-container {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .filter-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            font-size: 16px;
+        }
+        
+        select[multiple] {
+            height: auto;
+            min-height: 100px;
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .card-category {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Термінологічний довідник</h1>
+        <p>Фільтруйте картки за категоріями</p>
+    </header>
+    
+    <div class="filter-container">
+        <div class="filter-group">
+            <label for="category-filter">Фільтр за категоріями:</label>
+            <select id="category-filter" multiple>
+                <option value="technology">Технології</option>
+                <option value="security">Безпека</option>
+                <option value="medical">Медицина</option>
+                <option value="legal">Юридичні</option>
+                <option value="finance">Фінанси</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="cards-container" id="cards-container">
+        <!-- Картки будуть додані через JavaScript -->
+    </div>
+    
+    <script>
+        // Дані карток
+        const cardsData = [
+            {
+                title: "HTML",
+                description: "Мова розмітки гіпертексту, основа веб-сторінок.",
+                category: "technology"
+            },
+            {
+                title: "CSS",
+                description: "Мова стилів для опису зовнішнього вигляду документів.",
+                category: "technology"
+            },
+            {
+                title: "JavaScript",
+                description: "Мова програмування для створення інтерактивних веб-сторінок.",
+                category: "technology"
+            },
+            {
+                title: "GDPR",
+                description: "Загальний регламент щодо захисту даних в ЄС.",
+                category: "legal"
+            },
+            {
+                title: "Firewall",
+                description: "Система безпеки, що контролює мережевий трафік.",
+                category: "security"
+            },
+            {
+                title: "VPN",
+                description: "Віртуальна приватна мережа для безпечного з'єднання.",
+                category: "security"
+            },
+            {
+                title: "CPI",
+                description: "Індекс споживчих цін, показник інфляції.",
+                category: "finance"
+            },
+            {
+                title: "ECG",
+                description: "Електрокардіограма, метод діагностики серця.",
+                category: "medical"
+            },
+            {
+                title: "API",
+                description: "Інтерфейс програмування додатків для взаємодії програм.",
+                category: "technology"
+            },
+            {
+                title: "Phishing",
+                description: "Шахрайський метод отримання конфіденційної інформації.",
+                category: "security"
+            }
+        ];
+        
+        // Отримуємо елементи DOM
+        const cardsContainer = document.getElementById('cards-container');
+        const categoryFilter = document.getElementById('category-filter');
+        
+        // Функція для відображення карток
+        function displayCards(cards) {
+            cardsContainer.innerHTML = '';
+            
+            if (cards.length === 0) {
+                cardsContainer.innerHTML = '<div class="no-results">Нічого не знайдено за обраними критеріями</div>';
+                return;
+            }
+            
+            cards.forEach(card => {
+                const cardElement = document.createElement('div');
+                cardElement.className = 'card';
+                cardElement.dataset.category = card.category;
+                
+                cardElement.innerHTML = `
+                    <div class="card-header">${card.title}</div>
+                    <div class="card-body">
+                        <span class="card-category">${getCategoryName(card.category)}</span>
+                        <p>${card.description}</p>
+                    </div>
+                `;
+                
+                cardsContainer.appendChild(cardElement);
+            });
+        }
+        
+        // Функція для отримання назви категорії
+        function getCategoryName(categoryValue) {
+            const option = Array.from(categoryFilter.options).find(opt => opt.value === categoryValue);
+            return option ? option.text : categoryValue;
+        }
+        
+        // Функція для фільтрації карток
+        function filterCards() {
+            const selectedCategories = Array.from(categoryFilter.selectedOptions).map(opt => opt.value);
+            
+            if (selectedCategories.length === 0) {
+                displayCards(cardsData);
+                return;
+            }
+            
+            const filteredCards = cardsData.filter(card => 
+                selectedCategories.includes(card.category)
+            );
+            
+            displayCards(filteredCards);
+        }
+        
+        // Ініціалізація сторінки
+        function init() {
+            displayCards(cardsData);
+            categoryFilter.addEventListener('change', filterCards);
+        }
+        
+        // Запускаємо ініціалізацію при завантаженні сторінки
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
