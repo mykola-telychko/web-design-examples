@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рейтинг з неоновими зірками</title>
+    <style>
+        body {
+            /* background: #0a192f; */
+            background: #1588ee;;
+            color: #e6f1ff;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+        }
+        
+        h2 {
+            color: #64ffda;
+            margin-top: 30px;
+        }
+        
+        .rating {
+            display: inline-flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+        
+        .rating input {
+            display: none;
+        }
+        
+        .rating label {
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            margin: 0 5px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234a5568"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>');
+            background-size: cover;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 2px rgba(255,255,255,0.2));
+        }
+        
+        .rating label:hover {
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+        }
+        
+        .rating input:checked ~ label,
+        .rating input:checked ~ label ~ label {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>');
+            filter: drop-shadow(0 0 8px #64ffda) drop-shadow(0 0 12px rgba(100, 255, 218, 0.5));
+        }
+        
+        /* Стилі для статичного відображення */
+        .static-rating {
+            display: inline-flex;
+        }
+        
+        .static-rating .star {
+            width: 40px;
+            height: 40px;
+            margin: 0 5px;
+            background-size: cover;
+            transition: all 0.3s ease;
+        }
+        
+        .static-rating .star.active {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>');
+            filter: drop-shadow(0 0 8px #64ffda) drop-shadow(0 0 12px rgba(100, 255, 218, 0.5));
+            animation: neon-pulse 1.5s infinite alternate;
+        }
+        
+        .static-rating .star.inactive {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234a5568"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>');
+            filter: drop-shadow(0 0 2px rgba(255,255,255,0.2));
+        }
+        
+        @keyframes neon-pulse {
+            from {
+                filter: drop-shadow(0 0 5px #64ffda) drop-shadow(0 0 10px rgba(100, 255, 218, 0.3));
+            }
+            to {
+                filter: drop-shadow(0 0 10px #64ffda) drop-shadow(0 0 20px rgba(100, 255, 218, 0.6));
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Інтерактивний рейтинг (можна вибирати)</h2>
+    <form class="rating">
+        <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 зірки"></label>
+        <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 зірки"></label>
+        <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 зірка"></label>
+    </form>
+    
+    <h2>Статичний рейтинг (тільки відображення)</h2>
+    <div id="staticRating1" class="static-rating" data-rating="0"></div><br>
+    <div id="staticRating2" class="static-rating" data-rating="1"></div><br>
+    <div id="staticRating3" class="static-rating" data-rating="2"></div><br>
+    <div id="staticRating4" class="static-rating" data-rating="3"></div>
+    
+    <script>
+        // Функція для ініціалізації статичного рейтингу
+        function initStaticRating() {
+            const staticRatings = document.querySelectorAll('.static-rating');
+            
+            staticRatings.forEach(ratingElement => {
+                const ratingValue = parseInt(ratingElement.getAttribute('data-rating'));
+                ratingElement.innerHTML = '';
+                
+                // Створюємо 3 зірки
+                for (let i = 1; i <= 3; i++) {
+                    const star = document.createElement('div');
+                    star.className = i <= ratingValue ? 'star active' : 'star inactive';
+                    ratingElement.appendChild(star);
+                }
+            });
+        }
+        
+        // Ініціалізація при завантаженні сторінки
+        window.addEventListener('DOMContentLoaded', () => {
+            initStaticRating();
+            
+            // Додаємо обробник подій для інтерактивного рейтингу
+            const ratingInputs = document.querySelectorAll('.rating input');
+            ratingInputs.forEach(input => {
+                input.addEventListener('change', (e) => {
+                    alert(`Ви обрали рейтинг: ${e.target.value}`);
+                });
+            });
+        });
+        
+        // Функція для оновлення статичного рейтингу
+        function updateRating(elementId, newRating) {
+            const ratingElement = document.getElementById(elementId);
+            if (ratingElement) {
+                ratingElement.setAttribute('data-rating', newRating);
+                
+                const stars = ratingElement.querySelectorAll('.star');
+                stars.forEach((star, index) => {
+                    star.className = index < newRating ? 'star active' : 'star inactive';
+                });
+            }
+        }
+        
+        // Приклад оновлення рейтингу через 3 секунди
+        setTimeout(() => {
+            updateRating('staticRating1', 2);
+        }, 3000);
+    </script>
+</body>
+</html>
