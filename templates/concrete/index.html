@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concrete Flat Design</title>
+    <style>
+        :root {
+            --concrete-light: #f5f5f5;
+            --concrete-medium: #e0e0e0;
+            --concrete-dark: #bdbdbd;
+            --concrete-darker: #9e9e9e;
+            --text-primary: #212121;
+            --text-secondary: #424242;
+            --accent: #616161;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--concrete-light);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--concrete-medium);
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--text-primary);
+            margin-top: 0;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            border-bottom: 3px solid var(--concrete-dark);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            background-color: var(--concrete-medium);
+            padding: 10px;
+            margin: 30px 0 15px 0;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin: 25px 0 10px 0;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid var(--concrete-dark);
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--text-primary);
+            border-bottom-color: var(--accent);
+        }
+
+        .button {
+            display: inline-block;
+            background-color: var(--concrete-dark);
+            color: var(--text-primary);
+            padding: 12px 24px;
+            margin: 10px 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: var(--concrete-darker);
+            color: white;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+        }
+
+        .button-primary {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .button-primary:hover {
+            background-color: var(--text-primary);
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .divider {
+            height: 1px;
+            background-color: var(--concrete-dark);
+            margin: 30px 0;
+            border: none;
+        }
+
+        .nav {
+            display: flex;
+            background-color: var(--concrete-medium);
+            padding: 0;
+            margin: 0 0 20px 0;
+            list-style: none;
+        }
+
+        .nav-item {
+            padding: 15px 20px;
+        }
+
+        .nav-item a {
+            border-bottom: none;
+            color: var(--text-primary);
+        }
+
+        .nav-item:hover {
+            background-color: var(--concrete-dark);
+        }
+
+        footer {
+            background-color: var(--concrete-medium);
+            padding: 30px 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .grid-item {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Concrete Design</h1>
+            <p>Flat UI inspired by modern architecture and raw concrete surfaces</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <ul class="nav">
+            <li class="nav-item"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="#">About</a></li>
+            <li class="nav-item"><a href="#">Services</a></li>
+            <li class="nav-item"><a href="#">Portfolio</a></li>
+            <li class="nav-item"><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="card">
+            <h2>About This Design</h2>
+            <p>This design utilizes a monochromatic gray palette inspired by concrete surfaces. The flat design approach eliminates any border-radius, creating sharp edges that complement the industrial aesthetic.</p>
+            <p>Key features include:</p>
+            <ul>
+                <li>Clean, minimalist typography</li>
+                <li>Subtle shadows for depth</li>
+                <li>High contrast text for readability</li>
+                <li>Sharp, angular elements</li>
+            </ul>
+            <a href="#">Learn more about our design philosophy →</a>
+        </div>
+
+        <hr class="divider">
+
+        <h2>Call to Action</h2>
+        <button class="button">Secondary Action</button>
+        <button class="button button-primary">Primary Action</button>
+
+        <hr class="divider">
+
+        <h2>Content Grid</h2>
+        <div class="grid">
+            <div class="grid-item">
+                <h3>Service One</h3>
+                <p>Professional design solutions for modern businesses looking to establish a strong visual identity.</p>
+                <a href="#">View details</a>
+            </div>
+            <div class="grid-item">
+                <h3>Service Two</h3>
+                <p>Comprehensive branding packages that communicate your company's values effectively.</p>
+                <a href="#">View details</a>
+            </div>
+            <div class="grid-item">
+                <h3>Service Three</h3>
+                <p>User experience optimization to ensure your digital products meet customer expectations.</p>
+                <a href="#">View details</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Mykola Telychko. All rights reserved.</p>
+            <p>
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a> | 
+                <a href="#">Contact Us</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
