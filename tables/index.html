@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12x11 Table Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #4a6fa5;
+            color: white;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: #e6e6e6;
+        }
+        
+        caption {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table>
+            <caption>Sample Data Table (12 Columns × 11 Rows)</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Position</th>
+                    <th>Salary</th>
+                    <th>Start Date</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                    <th>Projects</th>
+                    <th>Performance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1001</td>
+                    <td>John Smith</td>
+                    <td>Marketing</td>
+                    <td>Manager</td>
+                    <td>$85,000</td>
+                    <td>2020-05-15</td>
+                    <td>john.smith@example.com</td>
+                    <td>(555) 123-4567</td>
+                    <td>New York</td>
+                    <td>Active</td>
+                    <td>5</td>
+                    <td>Excellent</td>
+                </tr>
+                <tr>
+                    <td>1002</td>
+                    <td>Sarah Johnson</td>
+                    <td>Engineering</td>
+                    <td>Developer</td>
+                    <td>$92,000</td>
+                    <td>2019-08-22</td>
+                    <td>sarah.j@example.com</td>
+                    <td>(555) 234-5678</td>
+                    <td>San Francisco</td>
+                    <td>Active</td>
+                    <td>3</td>
+                    <td>Good</td>
+                </tr>
+                <tr>
+                    <td>1003</td>
+                    <td>Michael Brown</td>
+                    <td>Finance</td>
+                    <td>Analyst</td>
+                    <td>$78,000</td>
+                    <td>2021-01-10</td>
+                    <td>michael.b@example.com</td>
+                    <td>(555) 345-6789</td>
+                    <td>Chicago</td>
+                    <td>Active</td>
+                    <td>7</td>
+                    <td>Excellent</td>
+                </tr>
+                <tr>
+                    <td>1004</td>
+                    <td>Emily Davis</td>
+                    <td>HR</td>
+                    <td>Specialist</td>
+                    <td>$65,000</td>
+                    <td>2022-03-05</td>
+                    <td>emily.d@example.com</td>
+                    <td>(555) 456-7890</td>
+                    <td>Boston</td>
+                    <td>Active</td>
+                    <td>2</td>
+                    <td>Average</td>
+                </tr>
+                <tr>
+                    <td>1005</td>
+                    <td>Robert Wilson</td>
+                    <td>Sales</td>
+                    <td>Representative</td>
+                    <td>$72,000</td>
+                    <td>2018-11-18</td>
+                    <td>robert.w@example.com</td>
+                    <td>(555) 567-8901</td>
+                    <td>Dallas</td>
+                    <td>Active</td>
+                    <td>4</td>
+                    <td>Good</td>
+                </tr>
+                <tr>
+                    <td>1006</td>
+                    <td>Jennifer Lee</td>
+                    <td>Engineering</td>
+                    <td>Lead Developer</td>
+                    <td>$110,000</td>
+                    <td>2017-06-30</td>
+                    <td>jennifer.l@example.com</td>
+                    <td>(555) 678-9012</td>
+                    <td>Seattle</td>
+                    <td>Active</td>
+                    <td>6</td>
+                    <td>Excellent</td>
+                </tr>
+                <tr>
+                    <td>1007</td>
+                    <td>David Miller</td>
+                    <td>Marketing</td>
+                    <td>Coordinator</td>
+                    <td>$60,000</td>
+                    <td>2023-02-14</td>
+                    <td>david.m@example.com</td>
+                    <td>(555) 789-0123</td>
+                    <td>Los Angeles</td>
+                    <td>Probation</td>
+                    <td>1</td>
+                    <td>Needs Improvement</td>
+                </tr>
+                <tr>
+                    <td>1008</td>
+                    <td>Jessica Taylor</td>
+                    <td>Finance</td>
+                    <td>Manager</td>
+                    <td>$95,000</td>
+                    <td>2019-04-25</td>
+                    <td>jessica.t@example.com</td>
+                    <td>(555) 890-1234</td>
+                    <td>New York</td>
+                    <td>Active</td>
+                    <td>5</td>
+                    <td>Excellent</td>
+                </tr>
+                <tr>
+                    <td>1009</td>
+                    <td>Daniel Anderson</td>
+                    <td>IT</td>
+                    <td>Admin</td>
+                    <td>$82,000</td>
+                    <td>2020-09-08</td>
+                    <td>daniel.a@example.com</td>
+                    <td>(555) 901-2345</td>
+                    <td>Chicago</td>
+                    <td>Active</td>
+                    <td>4</td>
+                    <td>Good</td>
+                </tr>
+                <tr>
+                    <td>1010</td>
+                    <td>Lisa Martinez</td>
+                    <td>Operations</td>
+                    <td>Director</td>
+                    <td>$120,000</td>
+                    <td>2016-07-12</td>
+                    <td>lisa.m@example.com</td>
+                    <td>(555) 012-3456</td>
+                    <td>San Francisco</td>
+                    <td>Active</td>
+                    <td>8</td>
+                    <td>Excellent</td>
+                </tr>
+                <tr>
+                    <td>1011</td>
+                    <td>James White</td>
+                    <td>Sales</td>
+                    <td>Manager</td>
+                    <td>$105,000</td>
+                    <td>2018-03-19</td>
+                    <td>james.w@example.com</td>
+                    <td>(555) 123-4567</td>
+                    <td>Boston</td>
+                    <td>Active</td>
+                    <td>6</td>
+                    <td>Good</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
