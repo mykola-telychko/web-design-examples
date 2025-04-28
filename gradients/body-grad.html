@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Горизонтальний градієнт</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh; /* Мінімальна висота = екран */
+      background: linear-gradient(
+        to right,
+        #ff0000,    /* Червоний (ліворуч) */
+        #0000ff 50%, /* Синій (середина) */
+        #ff0000     /* Червоний (праворуч) */
+      );
+      background-size: 100% 100%; /* Розтягуємо на всю площину */
+      background-repeat: no-repeat;
+    }
+    
+    /* Для демонстрації контенту */
+    .content {
+      padding: 50px;
+      color: white;
+      font-family: Arial;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Контент сторінки</h1>
+    <p>Градієнт адаптується до висоти body.</p>
+    <p>Спробуйте додати більше тексту — фон розтягнеться!</p>
+  </div>
+</body>
+</html>
