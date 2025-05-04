@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textarea Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .example {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        
+        textarea {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-family: inherit;
+        }
+        
+        .styled-textarea {
+            background-color: #f9f9f9;
+            border: 2px solid #4CAF50;
+            resize: none;
+            font-family: 'Courier New', monospace;
+            color: #333;
+        }
+        
+        .disabled-textarea {
+            background-color: #f0f0f0;
+            color: #666;
+            cursor: not-allowed;
+        }
+        
+        .readonly-textarea {
+            background-color: #fffde7;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        code {
+            display: block;
+            background-color: #f5f5f5;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Textarea Examples</h1>
+    
+    <div class="example">
+        <h2>Basic Textarea</h2>
+        <label for="basic-textarea">Enter your comments:</label>
+        <textarea id="basic-textarea" rows="4" cols="50" placeholder="Type your comments here..."></textarea>
+        <code>&lt;textarea id="basic-textarea" rows="4" cols="50" placeholder="Type your comments here..."&gt;&lt;/textarea&gt;</code>
+    </div>
+    
+    <div class="example">
+        <h2>Textarea with Default Text</h2>
+        <label for="default-text">Biography:</label>
+        <textarea id="default-text" rows="4" cols="50">This is some default text that appears in the textarea when the page loads.</textarea>
+        <code>&lt;textarea id="default-text" rows="4" cols="50"&gt;This is some default text that appears in the textarea when the page loads.&lt;/textarea&gt;</code>
+    </div>
+    
+    <div class="example">
+        <h2>Custom-styled Textarea</h2>
+        <label for="styled-textarea">Styled Notes:</label>
+        <textarea id="styled-textarea" class="styled-textarea" rows="4" cols="50" placeholder="This textarea has custom styling"></textarea>
+        <code>&lt;textarea id="styled-textarea" class="styled-textarea" rows="4" cols="50" placeholder="This textarea has custom styling"&gt;&lt;/textarea&gt;</code>
+    </div>
+    
+    <div class="example">
+        <h2>Disabled Textarea</h2>
+        <label for="disabled-textarea">Disabled Field:</label>
+        <textarea id="disabled-textarea" class="disabled-textarea" rows="4" cols="50" disabled>This textarea is disabled and cannot be edited.</textarea>
+        <code>&lt;textarea id="disabled-textarea" class="disabled-textarea" rows="4" cols="50" disabled&gt;This textarea is disabled and cannot be edited.&lt;/textarea&gt;</code>
+    </div>
+    
+    <div class="example">
+        <h2>Read-only Textarea</h2>
+        <label for="readonly-textarea">Terms and Conditions:</label>
+        <textarea id="readonly-textarea" class="readonly-textarea" rows="4" cols="50" readonly>These are the terms and conditions. This textarea is read-only, so users can read but not modify the content.</textarea>
+        <code>&lt;textarea id="readonly-textarea" class="readonly-textarea" rows="4" cols="50" readonly&gt;These are the terms and conditions. This textarea is read-only, so users can read but not modify the content.&lt;/textarea&gt;</code>
+    </div>
+    
+    <div class="example">
+        <h2>Required Textarea</h2>
+        <form>
+            <label for="required-textarea">Feedback (required):</label>
+            <textarea id="required-textarea" rows="4" cols="50" required placeholder="Please provide your feedback (this field is required)"></textarea>
+            <br><br>
+            <button type="submit">Submit</button>
+        </form>
+        <code>&lt;textarea id="required-textarea" rows="4" cols="50" required placeholder="Please provide your feedback (this field is required)"&gt;&lt;/textarea&gt;</code>
+    </div>
+    
+    <div class="example">
+        <h2>Textarea with Maximum Length</h2>
+        <label for="maxlength-textarea">Short Description (max 100 chars):</label>
+        <textarea id="maxlength-textarea" rows="4" cols="50" maxlength="100" placeholder="Limited to 100 characters"></textarea>
+        <code>&lt;textarea id="maxlength-textarea" rows="4" cols="50" maxlength="100" placeholder="Limited to 100 characters"&gt;&lt;/textarea&gt;</code>
+    </div>
+    
+    <div class="example">
+        <h2>Auto-resizing Textarea</h2>
+        <label for="autoresize-textarea">Auto-resize:</label>
+        <textarea id="autoresize-textarea" rows="1" cols="50" placeholder="This textarea will grow as you type..."></textarea>
+        <code>&lt;textarea id="autoresize-textarea" rows="1" cols="50" placeholder="This textarea will grow as you type..."&gt;&lt;/textarea&gt;</code>
+        
+        <script>
+            // JavaScript for auto-resizing textarea
+            const autoResizeTextarea = document.getElementById('autoresize-textarea');
+            
+            autoResizeTextarea.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+            });
+        </script>
+    </div>
+</body>
+</html>
