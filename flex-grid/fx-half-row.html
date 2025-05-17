@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Два DIV на половину ширини</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    .content {
+      width: 100%; /* або фіксована ширина, наприклад 800px */
+      display: flex;
+    }
+    
+    .half {
+      flex: 1; /* Розподіляє простір рівномірно */
+      min-height: 100px; /* Мінімальна висота для наочності */
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    /* Кольори для наочності */
+    .half:first-child {
+      background-color: #f0f0f0;
+    }
+    
+    .half:last-child {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="half">
+      Перший блок (50% ширини)
+    </div>
+    <div class="half">
+      Другий блок (50% ширини)
+    </div>
+  </div>
+</body>
+</html>
