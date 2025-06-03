@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Архівні документи</title>
+  <style>
+    /* Ретро шрифти */
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Old+Standard+TT&family=Special+Elite&display=swap');
+    
+    :root {
+      --paper-color: #f5f5f0;
+      --ink-color: #2a2118;
+      --accent-color: #8b0000;
+      --border-color: #8b4513;
+      --highlight-color: #e6d8b5;
+    }
+    
+    html {
+      background-color: #d1c7b7;
+      color: var(--ink-color);
+      font-family: 'Old Standard TT', serif;
+      line-height: 1.5;
+    }
+    
+    body {
+      background-color: var(--paper-color);
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border-color);
+      position: relative;
+      background-image: linear-gradient(
+          var(--paper-color) 0.9px,
+          transparent 0.9px
+        ),
+        linear-gradient(
+          90deg,
+          var(--paper-color) 0.9px,
+          transparent 0.9px
+        );
+      background-size: 20px 20px;
+    }
+    
+    /* Ефект старого паперу */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.05 0"/></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.3"/></svg>');
+      pointer-events: none;
+      mix-blend-mode: multiply;
+    }
+    
+    /* Заголовки */
+    h1, h2, h3 {
+      font-family: 'Cinzel Decorative', serif;
+      color: var(--accent-color);
+      text-align: center;
+      border-bottom: 1px dashed var(--border-color);
+      padding-bottom: 0.5rem;
+    }
+    
+    h1 {
+      font-size: 2.2rem;
+      margin-top: 0;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 2rem;
+    }
+    
+    h3 {
+      font-size: 1.3rem;
+      text-align: left;
+      border-bottom: none;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Текст */
+    p {
+      text-align: justify;
+      hyphens: auto;
+      margin-bottom: 1rem;
+    }
+    
+    /* Дата */
+    .date {
+      text-align: right;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+    
+    /* Кнопки */
+    .button {
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      margin: 0.5rem;
+      font-family: 'Special Elite', cursive;
+      background-color: var(--paper-color);
+      color: var(--ink-color);
+      border: 2px solid var(--border-color);
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .button:hover {
+      background-color: var(--highlight-color);
+      box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+      transform: translate(2px, 2px);
+    }
+    
+    .button-primary {
+      background-color: var(--accent-color);
+      color: white;
+      border-color: var(--accent-color);
+    }
+    
+    .button-large {
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+    }
+    
+    .button-small {
+      padding: 0.3rem 1rem;
+      font-size: 0.8rem;
+    }
+    
+    /* Групи кнопок */
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 1.5rem 0;
+      gap: 0.5rem;
+    }
+    
+    /* Картки */
+    .card {
+      background: white;
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      margin: 1rem 0;
+      box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    
+    .card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0) 60%
+      );
+      pointer-events: none;
+    }
+    
+    /* Списки */
+    ul, ol {
+      margin-left: 1.5rem;
+      padding-left: 1rem;
+    }
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Таблиці */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 0.5rem;
+      text-align: left;
+    }
+    
+    th {
+      background-color: var(--highlight-color);
+      font-family: 'Special Elite', cursive;
+    }
+    
+    tr:nth-child(even) {
+      background-color: rgba(230, 216, 181, 0.3);
+    }
+    
+    /* Форми */
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-family: 'Special Elite', cursive;
+    }
+    
+    input, textarea, select {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid var(--border-color);
+      background-color: var(--paper-color);
+      font-family: 'Old Standard TT', serif;
+    }
+    
+    input:focus, textarea:focus, select:focus {
+      outline: 2px solid var(--accent-color);
+      background-color: white;
+    }
+    
+    /* Підвал */
+    footer {
+      margin-top: 3rem;
+      border-top: 1px dashed var(--border-color);
+      padding-top: 1rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #666;
+    }
+    
+    /* Спеціальні ефекти */
+    .stamp {
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      opacity: 0.7;
+      transform: rotate(15deg);
+      font-family: 'Special Elite', cursive;
+      color: var(--accent-color);
+      border: 2px solid var(--accent-color);
+      padding: 0.3rem 0.6rem;
+      font-size: 0.8rem;
+      background: white;
+    }
+    
+    .handwritten {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.2rem;
+      color: #333;
+    }
+    
+    /* Адаптивність */
+    @media (max-width: 768px) {
+      body {
+        margin: 0.5rem;
+        padding: 1rem;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      .button-group {
+        flex-direction: column;
+      }
+      
+      .button {
+        width: 100%;
+        margin: 0.3rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stamp">ЗАТВЕРДЖЕНО<br>№ 142-Д</div>
+  
+  <h1>ДЕРЖАВНИЙ АРХІВ</h1>
+  <p class="date">10 травня 1967 року</p>
+  
+  <div class="card">
+    <h2>ОФІЦІЙНІ ДОКУМЕНТИ</h2>
+    <p>Нижче наведено перелік офіційних документів, які підлягають реєстрації та архівуванню відповідно до наказу №142-Д від 10.05.1967.</p>
+    
+    <div class="button-group">
+      <button class="button button-primary">Переглянути архів</button>
+      <button class="button">Завантажити документи</button>
+      <button class="button">Залишити запит</button>
+    </div>
+  </div>
+  
+  <h2>КАТЕГОРІЇ ДОКУМЕНТІВ</h2>
+  
+  <div class="button-group">
+    <button class="button button-small">Адміністративні</button>
+    <button class="button button-small">Фінансові</button>
+    <button class="button button-small">Особисті справи</button>
+    <button class="button button-small">Технічні</button>
+    <button class="button button-small">Історичні</button>
+    <button class="button button-small">Інші</button>
+  </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>Категорія</th>
+        <th>Кількість</th>
+        <th>Дії</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Накази та розпорядження</td>
+        <td>1,245</td>
+        <td>
+          <button class="button button-small">Переглянути</button>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Протоколи засідань</td>
+        <td>876</td>
+        <td>
+          <button class="button button-small">Переглянути</button>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Договори</td>
+        <td>542</td>
+        <td>
+          <button class="button button-small">Переглянути</button>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Звіти</td>
+        <td>2,312</td>
+        <td>
+          <button class="button button-small">Переглянути</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="card">
+    <h3>ЗАПИТ НА ДОСТУП ДО АРХІВУ</h3>
+    
+    <form>
+      <div class="form-group">
+        <label for="name">ПІБ:</label>
+        <input type="text" id="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="organization">Організація:</label>
+        <input type="text" id="organization">
+      </div>
+      
+      <div class="form-group">
+        <label for="purpose">Мета запиту:</label>
+        <select id="purpose">
+          <option>Наукове дослідження</option>
+          <option>Юридичні потреби</option>
+          <option>Особисті цілі</option>
+          <option>Інше</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="details">Деталі запиту:</label>
+        <textarea id="details" rows="4"></textarea>
+      </div>
+      
+      <div class="button-group">
+        <button type="submit" class="button button-primary button-large">Надіслати запит</button>
+        <button type="reset" class="button button-large">Очистити</button>
+      </div>
+    </form>
+  </div>
+  
+  <div class="card">
+    <h3>ОСТАННІ НАДХОДЖЕННЯ</h3>
+    <ul>
+      <li>Документи з особового складу за 1965-1966 рр. (12.04.1967)</li>
+      <li>Фінансові звіти за I квартал 1967 р. (05.04.1967)</li>
+      <li>Технічна документація будівництва (28.03.1967)</li>
+    </ul>
+    
+    <p class="handwritten">До уваги: документи зберігаються протягом 50 років з дати їх створення.</p>
+  </div>
+  
+  <footer>
+    Державний архів © 1967<br>
+    Всі документи є конфіденційними<br>
+    Телефон для довідок: (044) 123-45-67
+  </footer>
+</body>
+</html>
