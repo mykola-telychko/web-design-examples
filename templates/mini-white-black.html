@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мінімалістичний сайт</title>
+    <style>
+        /* Глобальні стилі */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: white;
+            color: black;
+            line-height: 1.6;
+        }
+        
+        /* Хедер */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-bottom: 1px solid black;
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Пошук */
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-input {
+            padding: 8px 15px;
+            border: 1px solid black;
+            border-radius: 20px;
+            outline: none;
+            width: 200px;
+            margin-right: 10px;
+        }
+        
+        .search-btn {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .search-btn:hover {
+            opacity: 0.8;
+        }
+        
+        /* Основний контент */
+        main {
+            padding: 40px 5%;
+        }
+        
+        section {
+            margin-bottom: 60px;
+            padding: 20px 0;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid black;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        /* Кнопки */
+        .btn {
+            display: inline-block;
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .btn:hover {
+            opacity: 0.8;
+        }
+        
+        .btn-outline {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+        }
+        
+        /* Адаптивність */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 5px 15px 5px 0;
+            }
+            
+            .search-container {
+                margin-top: 15px;
+                width: 100%;
+            }
+            
+            .search-input {
+                flex-grow: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">ЛОГО</a>
+        
+        <nav>
+            <ul>
+                <li><a href="#section1">Розділ 1</a></li>
+                <li><a href="#section2">Розділ 2</a></li>
+                <li><a href="#section3">Розділ 3</a></li>
+                <li><a href="#section4">Розділ 4</a></li>
+            </ul>
+        </nav>
+        
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Пошук...">
+            <button class="search-btn">Знайти</button>
+        </div>
+    </header>
+    
+    <main>
+        <section id="section1">
+            <h1>Розділ 1</h1>
+            <p>Тут знаходиться контент першого розділу. Мінімалістичний дизайн дозволяє зосередитися на суті.</p>
+            <button class="btn">Чорна кнопка</button>
+            <button class="btn btn-outline">Біла кнопка</button>
+        </section>
+        
+        <section id="section2">
+            <h1>Розділ 2</h1>
+            <h2>Підзаголовок</h2>
+            <p>Другий розділ містить додаткову інформацію. Чорно-біла кольорова схема створює суворий та елегантний вигляд.</p>
+        </section>
+        
+        <section id="section3">
+            <h1>Розділ 3</h1>
+            <p>Третій розділ може містити будь-який контент. Мінімалізм не означає обмеженість функціоналу.</p>
+        </section>
+        
+        <section id="section4">
+            <h1>Розділ 4</h1>
+            <p>Останній розділ завершує композицію сайту. Простота та функціональність - ось головні принципи цього дизайну.</p>
+        </section>
+    </main>
+
+    <script>
+        // Робочий пошук
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchBtn = document.querySelector('.search-btn');
+            const searchInput = document.querySelector('.search-input');
+            
+            searchBtn.addEventListener('click', function() {
+                const searchTerm = searchInput.value.trim().toLowerCase();
+                if (searchTerm) {
+                    // Простий пошук по тексту на сторінці
+                    const sections = document.querySelectorAll('section');
+                    let found = false;
+                    
+                    sections.forEach(section => {
+                        const text = section.textContent.toLowerCase();
+                        if (text.includes(searchTerm)) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                            section.style.backgroundColor = '#f5f5f5';
+                            setTimeout(() => {
+                                section.style.backgroundColor = 'transparent';
+                            }, 2000);
+                            found = true;
+                        }
+                    });
+                    
+                    if (!found) {
+                        alert('Нічого не знайдено за запитом: ' + searchTerm);
+                    }
+                }
+            });
+            
+            // Пошук при натисканні Enter
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchBtn.click();
+                }
+            });
+            
+            // Плавна прокрутка для навігації
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
