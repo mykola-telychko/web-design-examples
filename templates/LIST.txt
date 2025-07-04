@@ -2,3 +2,6 @@ https://codepen.io/Amber7021/pen/eYoXqpy
 
 research 
 https://codepen.io/Amber7021
+
+ #example_design FULL BLOG   
+ https://www.w3schools.com/howto/howto_css_blog_layout.asp
