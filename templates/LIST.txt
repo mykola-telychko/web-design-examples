@@ -16,3 +16,23 @@ https://time.com/
 
 https://www.nytimes.com/international/?action=click&region=Editions&pgtype=Homepage
 
+Готові шаблони:
+
+HTML5 UP — html5up.net — безкоштовні, красиві, одразу готові
+Free CSS — free-css.com — величезна колекція
+TemplateMonster — частина безкоштовна
+Itch.io — шукай «neocities template» — є специфічні ретро/indie шаблони
+Theme Fisher — themefisher.com
+
+Специфічно для Neocities:
+
+sadgrl.online/webmaster — популярний ресурс серед neocities спільноти, layout builder і шаблони
+Layoutopia — layoutopia.neocities.org
+Repth — repth.neocities.org — шаблони в стилі Web 1.0/2.0
+Eggramen — eggramen.neocities.org — готові CSS теми
+
+Де шукати більше:
+
+GitHub — шукай neocities template
+Neocities Browse — дивишся сайти які подобаються → View Source → береш код
+Reddit — r/neocities

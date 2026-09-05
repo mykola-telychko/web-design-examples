@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fibs</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+   
+   <style>
+        /* Глобальні стилі */
+        /* * { */
+            /* margin: 0;
+            padding: 0;
+            box-sizing: border-box; */
+            /* font-family: 'Helvetica Neue', Arial, sans-serif; */
+        /* } */
+        .special-elite-regular {
+            font-family: "Special Elite", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+
+        
+        
+        body {
+            /* background-color: white; */
+            background-color: #F8F3E5;
+            color: black;
+            line-height: 1.6;
+        }
+        
+        /* Хедер */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-bottom: 1px solid black;
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Пошук */
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-input {
+            padding: 8px 15px;
+            border: 1px solid black;
+            border-radius: 20px;
+            outline: none;
+            width: 200px;
+            margin-right: 10px;
+        }
+        
+        .search-btn {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .search-btn:hover {
+            opacity: 0.8;
+        }
+        
+        /* Основний контент */
+        main {
+            padding: 40px 5%;
+        }
+        
+        section {
+            margin-bottom: 60px;
+            padding: 20px 0;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid black;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        /* Кнопки */
+        .btn {
+            display: inline-block;
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .btn:hover {
+            opacity: 0.8;
+        }
+        
+        .btn-outline {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+        }
+        
+        /* Адаптивність */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 5px 15px 5px 0;
+            }
+            
+            .search-container {
+                margin-top: 15px;
+                width: 100%;
+            }
+            
+            .search-input {
+                flex-grow: 1;
+            }
+        }
+    </style>
+</head>
+<body class="special-elite-regular" >
+    <header>
+        <!-- <a href="#" class="logo">ЛОГО</a>   src="https://www.3dgifmaker.com/i/rFcUF9qk50Z.gif" -->
+        
+        <a href="https://www.3dgifmaker.com/g/rFcUF9qk50Z">
+            <img src="name.gif" 
+            title="made at 3dgifmaker.com"/></a>
+            <!-- <div>
+                <a href="https://www.3dgifmaker.com/">from 3D GIF Maker</a>
+            </div> -->
+        <nav>
+            <ul>
+                <li><a href="#section1">Essays</a></li>
+                <li><a href="#section2">Math</a></li>
+                <li><a href="#section3">Programming</a></li>
+                <li><a href="#section4">ETC</a></li>
+            </ul>
+        </nav>
+        
+      <!--  <div class="search-container">
+            <input type="text" class="search-input" placeholder="Пошук...">
+            <button class="search-btn">Знайти</button>
+        </div>-->
+
+        
+        <div class="search-container">
+          
+        </div>
+
+    </header>
+    
+    <main>
+        <section id="section1">
+            <h1>Essays</h1>
+            <p>The content of the first section is located here. The minimalist design allows you to focus on the essence.</p>
+            <button class="btn">Чорна кнопка</button>
+            <button class="btn btn-outline">Біла кнопка</button>
+        </section>
+        
+        <section id="section2">
+            <h1>Math</h1>
+            <h2>Header</h2>
+            <p>The second section contains additional information. The black-and-white color scheme creates a sleek and elegant look.</p>
+        </section>
+        
+        <section id="section3">
+            <h1>Programming</h1>
+            <p>The third section can contain any content. Minimalism does not mean limited functionality.</p>
+        </section>
+        
+        <section id="section4">
+            <h1>Science</h1>
+            <p>The final section completes the site's layout. Simplicity and functionality are the key principles of this design.</p>
+        </section>
+    </main>
+
+    <script>
+        // Робочий пошук
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchBtn = document.querySelector('.search-btn');
+            const searchInput = document.querySelector('.search-input');
+            
+            searchBtn.addEventListener('click', function() {
+                const searchTerm = searchInput.value.trim().toLowerCase();
+                if (searchTerm) {
+                    // Простий пошук по тексту на сторінці
+                    const sections = document.querySelectorAll('section');
+                    let found = false;
+                    
+                    sections.forEach(section => {
+                        const text = section.textContent.toLowerCase();
+                        if (text.includes(searchTerm)) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                            section.style.backgroundColor = '#f5f5f5';
+                            setTimeout(() => {
+                                section.style.backgroundColor = 'transparent';
+                            }, 2000);
+                            found = true;
+                        }
+                    });
+                    
+                    if (!found) {
+                        alert('Нічого не знайдено за запитом: ' + searchTerm);
+                    }
+                }
+            });
+            
+            // Пошук при натисканні Enter
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchBtn.click();
+                }
+            });
+            
+            // Плавна прокрутка для навігації
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
