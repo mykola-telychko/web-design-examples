@@ -182,6 +182,18 @@
                 flex-grow: 1;
             }
         }
+
+.image {
+    width: 400px;
+    height: 250px;
+}
+
+.image img {
+    width: 100%;
+    /* height: 100%; */
+    object-fit: cover; /* обрізає, але заповнює весь блок */
+    display: block;
+}
     </style>
 </head>
 <body class="special-elite-regular" >
@@ -196,10 +208,20 @@
             </div> -->
         <nav>
             <ul>
-                <li><a href="#section1">Essays</a></li>
-                <li><a href="#section2">Math</a></li>
-                <li><a href="#section3">Programming</a></li>
-                <li><a href="#section4">ETC</a></li>
+
+                <li>
+                    <a href="#section1">Essays</a>
+                </li>
+                <li>
+                    <a href="#section2">Math</a>
+                </li>
+                <li>
+                    <a href="#section3">Programming</a>
+                </li>
+                <li>
+                    <a href="#section4">ETC</a>
+                </li>
+
             </ul>
         </nav>
         
@@ -218,24 +240,40 @@
     <main>
         <section id="section1">
             <h1>Essays</h1>
+                        <div  class="essay-img image">
+                            <img src="img1.png" title="book"/>
+                        </div>
+                        <!-- style="height: 150px;" -->
+
             <p>The content of the first section is located here. The minimalist design allows you to focus on the essence.</p>
             <button class="btn">Чорна кнопка</button>
             <button class="btn btn-outline">Біла кнопка</button>
+
+
         </section>
         
         <section id="section2">
             <h1>Math</h1>
+                        <div  class="essay-img image">
+                            <img src="imgo.jpg" title="book"/>
+                        </div>
             <h2>Header</h2>
             <p>The second section contains additional information. The black-and-white color scheme creates a sleek and elegant look.</p>
         </section>
         
         <section id="section3">
             <h1>Programming</h1>
+                        <div  class="essay-img image">
+                            <img src="img3.jpg" title="book"/>
+                        </div>
             <p>The third section can contain any content. Minimalism does not mean limited functionality.</p>
         </section>
         
         <section id="section4">
             <h1>Science</h1>
+                        <div  class="essay-img image">
+                            <img src="img2.png" title="book"/>
+                        </div>
             <p>The final section completes the site's layout. Simplicity and functionality are the key principles of this design.</p>
         </section>
     </main>
